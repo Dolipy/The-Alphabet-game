@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Alphabet Game - Challenge the AI in this fun word game! Pick letters and name things, animals, places, and names.">
+    <title>The Alphabet Game</title>
+    <link rel="icon" href="Alphabet game logo.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ===== LANDING PAGE ===== -->
+    <section id="landing-page" class="page active">
+        <div class="landing-bg-shapes">
+            <div class="shape shape-1">A</div>
+            <div class="shape shape-2">Z</div>
+            <div class="shape shape-3">G</div>
+            <div class="shape shape-4">M</div>
+            <div class="shape shape-5">R</div>
+            <div class="shape shape-6">K</div>
+        </div>
+
+        <nav class="landing-nav">
+            <div class="logo">
+                <span class="logo-icon">🔤</span>
+                <span class="logo-text">The Alphabet Game</span>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-badge">🎮 Word Challenge</div>
+            <h1 class="hero-title">
+                The <span class="gradient-text">Alphabet</span> Game
+            </h1>
+            <p class="hero-subtitle">
+                Challenge the AI to the ultimate word battle! Pick letters, name things, animals, places, foods & names — race the clock and outsmart your opponent!
+            </p>
+            <div class="hero-buttons">
+                <button id="btn-start-playing" class="btn btn-primary btn-glow" onclick="showPage('auth-page')">
+          <span>🚀</span> Start Playing
+        </button>
+                <button class="btn btn-secondary" onclick="scrollToReviews()">
+          <span>⭐</span> See Reviews
+        </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label">Letters</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30s</span>
+                    <span class="stat-label">Per Round</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100</span>
+                    <span class="stat-label">Points to Win</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Play -->
+        <div class="how-to-play" id="how-to-play">
+            <h2 class="section-title">How To Play</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔤</div>
+                    <h3>Pick a Letter</h3>
+                    <p>Choose any letter from A to Z. Each letter can only be used once!</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✍️</div>
+                    <h3>Fill Categories</h3>
+                    <p>Name a Name, Thing, Animal, Place, and Food that starts with your chosen letter.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🤖</div>
+                    <h3>AI Responds</h3>
+                    <p>The AI will also fill in its own answers for the same letter.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🏆</div>
+                    <h3>Score Points!</h3>
+                    <p>Unique answers = 10pts, Similar = 5pts. First to 100 wins!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="reviews-section" id="reviews-section">
+            <h2 class="section-title">Player Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"This game is so addictive! I love trying to outsmart the AI. The timer makes it so thrilling!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">S</div>
+                        <div>
+                            <span class="reviewer-name">Sarah K.</span>
+                            <span class="reviewer-tag">Word Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Perfect brain exercise! My vocabulary has improved so much since I started playing daily."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">J</div>
+                        <div>
+                            <span class="reviewer-name">James T.</span>
+                            <span class="reviewer-tag">Daily Player</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"The AI is surprisingly clever! It really challenges you to think fast and creatively."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">M</div>
+                        <div>
+                            <span class="reviewer-name">Maya R.</span>
+                            <span class="reviewer-tag">Top Scorer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐</div>
+                    <p class="review-text">"Fun for the whole family! We take turns competing against the AI. Highly recommended!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);">D</div>
+                        <div>
+                            <span class="reviewer-name">David L.</span>
+                            <span class="reviewer-tag">Family Gamer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="landing-footer">
+            <p>&copy; 2026 The Alphabet Game. All rights reserved.</p>
+        </footer>
+    </section>
+
+    <!-- ===== AUTH PAGE ===== -->
+    <section id="auth-page" class="page">
+        <div class="auth-container">
+            <button class="back-btn" onclick="showPage('landing-page')">← Back</button>
+            <div class="auth-card">
+                <div class="auth-icon">🎯</div>
+                <h2>Enter The Arena</h2>
+                <p class="auth-subtitle">Sign in to challenge the AI</p>
+                <form id="auth-form" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" required minlength="2" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required minlength="4">
+                    </div>
+                    <button type="submit" id="btn-login" class="btn btn-primary btn-full">
+            Let's Play! 🚀
+          </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GAME PAGE ===== -->
+    <section id="game-page" class="page">
+        <div class="game-header">
+            <div class="game-logo">
+                <span>🔤</span> The Alphabet Game
+            </div>
+            <div class="scoreboard">
+                <div class="score-item player-score-box">
+                    <span class="score-label" id="player-name-display">Player</span>
+                    <span class="score-value" id="player-score">0</span>
+                </div>
+                <div class="score-divider">VS</div>
+                <div class="score-item ai-score-box">
+                    <span class="score-label">AI 🤖</span>
+                    <span class="score-value" id="ai-score">0</span>
+                </div>
+            </div>
+            <div class="round-display">
+                Round <span id="round-number">1</span>
+            </div>
+        </div>
+
+        <!-- Turn Indicator -->
+        <div class="turn-indicator" id="turn-indicator">
+            <span id="turn-text">Your Turn — Pick a Letter!</span>
+        </div>
+
+        <!-- Letter Selection -->
+        <div id="letter-selection" class="game-section">
+            <h2 class="game-section-title">Choose Your Letter</h2>
+            <div class="alphabet-grid" id="alphabet-grid"></div>
+        </div>
+
+        <!-- Player Input Phase -->
+        <div id="player-input-phase" class="game-section hidden">
+            <div class="phase-header">
+                <h2 class="game-section-title">
+                    Letter: <span id="current-letter-display" class="big-letter"></span>
+                </h2>
+                <div class="timer-container" id="timer-container">
+                    <div class="timer-ring">
+                        <svg width="80" height="80">
+              <circle cx="40" cy="40" r="35" class="timer-bg"></circle>
+              <circle cx="40" cy="40" r="35" class="timer-progress" id="timer-circle"></circle>
+            </svg>
+                        <span class="timer-text" id="timer-text">30</span>
+                    </div>
+                </div>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👤</div>
+                    <label>Name</label>
+                    <input type="text" id="input-name" placeholder="Enter a name..." autocomplete="off">
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📦</div>
+                    <label>Thing</label>
+                    <input type="text" id="input-thing" placeholder="Enter a thing..." autocomplete="off">
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🐾</div>
+                    <label>Animal</label>
+                    <input type="text" id="input-animal" placeholder="Enter an animal..." autocomplete="off">
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📍</div>
+                    <label>Place</label>
+                    <input type="text" id="input-place" placeholder="Enter a place..." autocomplete="off">
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍕</div>
+                    <label>Food</label>
+                    <input type="text" id="input-food" placeholder="Enter a food..." autocomplete="off">
+                </div>
+            </div>
+            <div class="validation-message" id="validation-message"></div>
+            <button id="btn-submit-answers" class="btn btn-primary btn-glow" onclick="submitPlayerAnswers()">
+        Submit Answers ✅
+      </button>
+        </div>
+
+        <!-- Round Results -->
+        <div id="round-results" class="game-section hidden">
+            <h2 class="game-section-title">Round Results</h2>
+            <div class="results-comparison">
+                <div class="results-column">
+                    <h3 id="results-player-name">You</h3>
+                    <div class="result-item" id="result-player-name-val"></div>
+                    <div class="result-item" id="result-player-thing-val"></div>
+                    <div class="result-item" id="result-player-animal-val"></div>
+                    <div class="result-item" id="result-player-place-val"></div>
+                    <div class="result-item" id="result-player-food-val"></div>
+                    <div class="result-points">+<span id="player-round-points">0</span> pts</div>
+                </div>
+                <div class="results-column">
+                    <h3>AI 🤖</h3>
+                    <div class="result-item" id="result-ai-name-val"></div>
+                    <div class="result-item" id="result-ai-thing-val"></div>
+                    <div class="result-item" id="result-ai-animal-val"></div>
+                    <div class="result-item" id="result-ai-place-val"></div>
+                    <div class="result-item" id="result-ai-food-val"></div>
+                    <div class="result-points">+<span id="ai-round-points">0</span> pts</div>
+                </div>
+            </div>
+            <div class="results-summary" id="results-summary"></div>
+            <button id="btn-next-round" class="btn btn-primary btn-glow" onclick="nextRound()">
+        Next Round ➡️
+      </button>
+        </div>
+    </section>
+
+    <!-- ===== WINNER PAGE ===== -->
+    <section id="winner-page" class="page">
+        <div class="winner-container">
+            <div class="confetti-container" id="confetti-container"></div>
+            <div class="winner-card">
+                <div class="winner-trophy" id="winner-trophy">🏆</div>
+                <h1 class="winner-title" id="winner-title">You Win!</h1>
+                <p class="winner-subtitle" id="winner-subtitle">Congratulations!</p>
+                <div class="final-scores">
+                    <div class="final-score-item">
+                        <span class="final-score-label" id="final-player-name">Player</span>
+                        <span class="final-score-value" id="final-player-score">0</span>
+                    </div>
+                    <div class="final-score-divider">—</div>
+                    <div class="final-score-item">
+                        <span class="final-score-label">AI 🤖</span>
+                        <span class="final-score-value" id="final-ai-score">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-glow" onclick="playAgain()">
+          Play Again 🔄
+        </button>
+                <button class="btn btn-secondary" onclick="showPage('landing-page'); resetGame();">
+          Home 🏠
+        </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
